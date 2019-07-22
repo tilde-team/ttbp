@@ -43,10 +43,7 @@ import re
 import mistune
 import json
 
-import chatter
-import config
-import gopher
-import util
+from ttbp import config, chatter, gopher, util
 
 FEED = os.path.join("/home", "ben", "public_html", "ttbp", "index.html")
 SETTINGS = {}

@@ -47,11 +47,7 @@ from six.moves import input
 
 import inflect
 
-import config
-import core
-import chatter
-import gopher
-import util
+from ttbp import config, core, chatter, gopher, util
 
 __version__ = "0.12.2"
 __author__ = "endorphant <endorphant@tilde.town)"
@@ -226,7 +222,7 @@ def check_init():
 
     print("\n\n")
     if os.path.exists(os.path.join(os.path.expanduser("~"),".ttbp")):
-        if config.USER == "endorphant":
+        if config.USER == "ben":
             print("hey boss! :D\n")
         else:
             print("{greeting}, {user}".format(greeting=chatter.say("greet"),
@@ -589,7 +585,7 @@ def main_menu():
         redraw()
         show_credits()
     elif choice == '9':
-        subprocess.call(["lynx", os.path.join(config.INSTALL_PATH, "..", "doc", "manual.html")])
+        subprocess.call(["lynx", "https://tilde.wiki/ttbp"])
         redraw()
     elif choice in QUITS:
         return stop()

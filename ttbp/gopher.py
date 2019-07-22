@@ -6,8 +6,7 @@ import os
 import time
 import subprocess
 
-import util
-import config
+from ttbp import util, config
 
 GOPHER_PROMPT = """
 
