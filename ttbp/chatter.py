@@ -16,7 +16,7 @@ DEFAULT_LANG = {
     ],
     "bye":[
         "see you later, space cowboy",
-        "bye, townie",
+        "bye, teammate",
         "until next time, friend",
         "come back whenever"
     ],
@@ -24,7 +24,7 @@ DEFAULT_LANG = {
         "friend",
         "pal",
         "buddy",
-        "townie"
+        "teammate"
     ],
     "months":{
         "01":"january",

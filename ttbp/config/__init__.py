@@ -3,7 +3,7 @@ import os
 import sys
 import time
 
-from .. import util
+import ttbp.util
 
 ## System config
 
@@ -24,8 +24,8 @@ if not os.path.isdir(VAR):
 if not os.path.isdir(VAR_WWW):
     os.mkdir(VAR_WWW)
 
-LIVE = 'https://tilde.town/~'
-FEEDBOX = "endorphant@tilde.town"
+LIVE = 'https://tilde.team/~'
+FEEDBOX = "sudoers@tilde.team"
 USERFILE = os.path.join(VAR, "users.txt")
 GRAFF_DIR = os.path.join(VAR, "graffiti")
 WALL = os.path.join(GRAFF_DIR, "wall.txt")
@@ -45,7 +45,7 @@ DEFAULT_HEADER = '''
   </head>
   <body>
     <div id="meta">
-      <h1><a href="#">~$USER</a>@<a href="/~endorphant/ttbp">TTBP</a></h1>
+      <h1><a href="#">~$USER</a>@<a href="https://tilde.team/wiki/ttbp">TTBP</a></h1>
     </div>
 
     <div id="tlogs">
@@ -83,7 +83,7 @@ SUBS = os.path.join(USER_CONFIG, 'subs')
 BANNER = '''
 ___________________________________________________________
 |                                                          |
-|  the tilde.town                                          |
+|  the tilde.team                                          |
 |  ____ ____ ____ _    ____    ____ _  _ ____ _ _  _ ____  |
 |  |___ |___ |___ |    [__     |___ |\ | | __ | |\ | |___  |
 |  |    |___ |___ |___ ___]    |___ | \| |__] | | \| |___  |
@@ -98,9 +98,9 @@ ___________________________________________________________
 intro_prompt = """
 i don't recognize you, stranger. let's make friends.
 
-the feels engine is an internal blogging platform on tilde.town. it assists you
+the feels engine is an internal blogging platform on tilde.team. it assists you
 in recording your feels, giving you the option to publish to html or gopher, and
-read the feels of other users on tilde.town.
+read the feels of other users on tilde.team.
 
 press <enter> to set up an account, or <ctrl-c> to quit.
 """.lstrip()
@@ -108,6 +108,8 @@ press <enter> to set up an account, or <ctrl-c> to quit.
 credits = """
 ttbp was written for tilde.town by ~endorphant in python. the codebase is
 publicly available on github at https://github.com/modgethanc/ttbp
+
+the tilde.team fork is maintained here: https://tildegit.org/team/ttbp
 
 tips for development are accepted at https://liberapay.com/modgethanc/
 
@@ -210,7 +212,7 @@ version 0.9.3 features:
 ~[version 0.10.1 features]~
         * thanks to help from ~vilmibm, ttbp now supports publishing to gopher!
         * if you enable gopher publishing, feels will automatically publish to
-            gopher://tilde.town/1/~{user}/feels
+            gopher://tilde.team/1/~{user}/feels
         * if you don't know what gopher is, it's fine to opt-out; ask around on
             irc if you'd like to learn more!
         * the settings menu has been reworked to be less clunky""",
@@ -297,7 +299,7 @@ version 0.9.3 features:
 ~[version 0.12.1 update]~
 
     new feature: "visit your subscriptions"
-        * view recent entries from a list of townies you've subscribed to
+        * view recent entries from a list of teammates you've subscribed to
         * subscription list is private; no one else can see who you're following
         * add/remove users from the subscription menu
 

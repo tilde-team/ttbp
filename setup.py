@@ -5,8 +5,8 @@ from setuptools import setup
 setup(
     name='ttbp',
     version='0.12.2',
-    description='command line social blogging tool used on tilde.town',
-    url='https://github.com/modgethanc/ttbp',
+    description='command line social blogging tool used on tilde.team',
+    url='https://tildegit.org/team/ttbp',
     author='~endorphant',
     author_email='endorphant@tilde.town',
     license='MIT',

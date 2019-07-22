@@ -30,6 +30,8 @@ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 the complete codebase is available at:
 https://github.com/modgethanc/ttbp
+and
+https://tildegit.org/team/ttbp
 '''
 from __future__ import absolute_import
 
@@ -45,11 +47,11 @@ from six.moves import input
 
 import inflect
 
-from . import config
-from . import core
-from . import chatter
-from . import gopher
-from . import util
+import config
+import core
+import chatter
+import gopher
+import util
 
 __version__ = "0.12.2"
 __author__ = "endorphant <endorphant@tilde.town)"
@@ -327,7 +329,7 @@ def gen_header():
     </head>
     <body>
         <div id=\"meta\">
-            <h1><a href=\"index.html#\">~"""+config.USER+"""</a>@<a href=\"/~endorphant/ttbp\">TTBP</a></h1>
+            <h1><a href=\"index.html#\">~"""+config.USER+"""</a>@<a href=\"https://tilde.team/wiki/ttbp\">TTBP</a></h1>
         </div>
 
         <!---put your custom html here-->
@@ -611,7 +613,7 @@ def feedback_menu():
     if choice in ['0', '1', '2', '3']:
         cat = SUBJECTS[int(choice)]
         entered = input("""
-composing a {mail_category} to ~endorphant.
+composing a {mail_category} to tilde.team admins.
 
 press <enter> to open an external text editor. mail will be sent once you save and quit.
 
@@ -806,7 +808,7 @@ def view_neighbors(users, prompt, page=0):
         sortedUsers.append(user[0])
         userIndex.append(user[2])
 
-    ans = menu_handler(sortedUsers, "pick a townie to browse their feels, or type 'q' to go home: ", 15, page, SETTINGS.get("rainbows", False), prompt)
+    ans = menu_handler(sortedUsers, "pick a teammate to browse their feels, or type 'q' to go home: ", 15, page, SETTINGS.get("rainbows", False), prompt)
 
     if ans is not False:
         (page, choice) = ans
@@ -819,7 +821,7 @@ def view_neighbors(users, prompt, page=0):
 
 def view_feels(townie):
     '''
-    generates a list of all feels by given townie and displays in
+    generates a list of all feels by given teammate and displays in
     date order; allows selection of one feel to read.
     '''
 
@@ -1286,7 +1288,7 @@ def send_feedback(entered, subject="none"):
         id = "#"+util.genID(3)
         mail = MIMEText(message)
         mail['To'] = config.FEEDBOX
-        mail['From'] = config.USER+"@tilde.town"
+        mail['From'] = config.USER+"@tilde.team"
         mail['Subject'] = " ".join(["[ttbp]", subject, id])
         m = os.popen("/usr/sbin/sendmail -t -oi", 'w')
         m.write(mail.as_string())
@@ -1358,9 +1360,9 @@ def view_subscribed_feed(subs, prompt=""):
 
 def feed_list(townies, delta=30):
     '''
-    given a list of townies, generate a list of 50 most recent entries within
+    given a list of teammates, generate a list of 50 most recent entries within
     given interval (default 30 days; 0 days for no limit). validates against
-    townies with ttbp config files.
+    teammates with ttbp config files.
 
     returns a tuple of (entries, metas)
     '''
@@ -1425,11 +1427,11 @@ def subscription_manager(subs, intro=""):
 
     if choice is not False:
         if choice == 0:
-            prompt = "list of townies recording feels:"
+            prompt = "list of teammates recording feels:"
             redraw(prompt)
             subs = subscribe_handler(subs, prompt)
         elif choice == 1:
-            prompt = "list of townies you're subscribed to:"
+            prompt = "list of teammates you're subscribed to:"
             redraw(prompt)
             subs = unsubscribe_handler(subs, prompt)
     else:
@@ -1446,7 +1448,7 @@ def unsubscribe_handler(subs, prompt, page=0):
 
     subs.sort()
 
-    ans = menu_handler(subs, "pick a pal to unsubscribe (or 'q' to cancel): ", 15, page, SETTINGS.get("rainbows", False), "list of townies recording feels:")
+    ans = menu_handler(subs, "pick a pal to unsubscribe (or 'q' to cancel): ", 15, page, SETTINGS.get("rainbows", False), "list of teammates recording feels:")
 
     if ans is not False:
         (page,choice) = ans
@@ -1473,7 +1475,7 @@ def subscribe_handler(subs, prompt, page=0):
 
     candidates.sort()
 
-    ans = menu_handler(candidates, "pick a townie to add to your subscriptions (or 'q' to cancel): ", 15, page, SETTINGS.get("rainbows", False), "list of townies recording feels:")
+    ans = menu_handler(candidates, "pick a teammate to add to your subscriptions (or 'q' to cancel): ", 15, page, SETTINGS.get("rainbows", False), "list of teammates recording feels:")
 
     if ans is not False:
         (page, choice) = ans
@@ -1659,7 +1661,7 @@ if yes, your feels will be published to a directory of your choice in
 your public_html. i'll confirm the location of that directory in a
 moment.
 
-if not, your feels will only be readable from within the tilde.town
+if not, your feels will only be readable from within the tilde.team
 network. if you already have a publishing directory, i'll remove it for
 you (don't worry, your written entries will still be saved!)
 
@@ -1842,7 +1844,7 @@ def update_user_version():
             print("""
     * thanks to help from ~vilmibm, ttbp now supports publishing to gopher!
     * if you enable gopher publishing, feels will automatically publish to
-        gopher://tilde.town/1/~"""+config.USER+"""/feels
+        gopher://tilde.team/1/~"""+config.USER+"""/feels
 
             """)
             SETTINGS.update({'gopher': gopher.select_gopher()})
@@ -1877,7 +1879,7 @@ def update_user_version():
 }""")
 
     print("""
-you're all good to go, """+chatter.say("friend")+"""! please contact ~endorphant if
+you're all good to go, """+chatter.say("friend")+"""! please contact the tilde.team admins if
 something strange happened to you during this update.
 """)
 
