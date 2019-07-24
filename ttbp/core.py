@@ -255,7 +255,7 @@ def write_global_feed(blogList):
             <div class="meta">
             <h1>tilde.team feels engine</h1>
 
-            <h2><a href="https://github.com/modgethanc/ttbp">github
+            <h2><a href="https://github.com/tilde-team/ttbp">github
             repo</a> | <a
             href="http://tilde.town/~endorphant/blog/20160510.html">state
             of the ttbp</a></h2>

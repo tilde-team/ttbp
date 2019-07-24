@@ -3,11 +3,11 @@
 `ttbp` stands for "tilde.team blogging platform", the original working name for
 this project.
 
-![ttbp main menu screenshot](screenshots/ttbp-main.png)
+![ttbp main menu screenshot](https://raw.githubusercontent.com/tilde-team/ttbp/master/screenshots/ttbp-main.png)
 
-![ttbp entries view screenshot](screenshots/ttbp-entries.png)
+![ttbp entries view screenshot](https://raw.githubusercontent.com/tilde-team/ttbp/master/screenshots/ttbp-entries.png)
 
-![ttbp compose view screenshot](screenshots/ttbp-compose.png)
+![ttbp compose view screenshot](https://raw.githubusercontent.com/tilde-team/ttbp/master/screenshots/ttbp-compose.png)
 
 `ttbp` runs from the command line, providing a hub for writing personal blog
 posts and reading posts written by other users of tilde.team. it's a little bit
