@@ -267,7 +267,7 @@ def write_global_feed(blogList):
         ## docs
         outfile.write("""\
             <div class="docs">""")
-        outfile.write(mistune.markdown(open(os.path.join(config.INSTALL_PATH, "..", "README.md"), "r").read()))
+        outfile.write(open(os.path.join(config.INSTALL_PATH, "README.html"), "r").read())
         outfile.write("""\
             </div>""")
 
