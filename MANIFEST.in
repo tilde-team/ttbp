@@ -1,3 +1,7 @@
 include ttbp/config/defaults/*.txt
 include ttbp/config/defaults/style.css
 include ttbp/README.html
+include README.md
+include doc/manual.html
+include doc/manual.md
+
